@@ -1,0 +1,40 @@
+{
+  "name": "blazma-nt",
+  "productName": "blazma.nt",
+  "version": "1.0.0",
+  "description": "Professional network monitoring and traffic analysis for Windows. Passive, read-only, privacy-first.",
+  "author": "blazma.nt",
+  "license": "MIT",
+  "private": true,
+  "main": "./out/main/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dist": "npm run build && electron-builder --win --config electron-builder.yml"
+  },
+  "dependencies": {
+    "node-sqlite3-wasm": "^0.8.60"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^5.1.0",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "recharts": "^3.10.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.14",
+    "vitest": "^4.1.10"
+  }
+}

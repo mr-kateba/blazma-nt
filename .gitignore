@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+release/
+dist/
+*.tsbuildinfo
+
+# Capture artefacts (never commit captured traffic)
+*.pcap
+*.pcapng
+*.etl
+
+# Local credentials / secrets (also stored outside the repo, but belt-and-braces)
+*credentials*.bin
+*.env
+.env.*
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
