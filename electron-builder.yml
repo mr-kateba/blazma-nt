@@ -1,0 +1,36 @@
+appId: nt.blazma.app
+productName: blazma.nt
+copyright: blazma.nt
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - out/**/*
+  - package.json
+
+# The renderer bundle and the main process are plain JS; there are no native
+# modules to unpack, which is what keeps packaging this simple.
+asar: true
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: NetWatchPro-Setup.exe
+  # Capture works without elevation once Npcap is installed with the
+  # "restrict to Administrators" option turned off, so the app does not demand
+  # elevation it may not need.
+  requestedExecutionLevel: asInvoker
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: blazma.nt
+  deleteAppDataOnUninstall: false
+  include: build/installer.nsh

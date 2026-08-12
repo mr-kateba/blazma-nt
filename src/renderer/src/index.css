@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+/*
+  Theme tokens. Both palettes are defined here and switched by the data-theme
+  attribute on <html>, so every component can use semantic colours and never
+  needs a dark: variant.
+*/
+:root,
+:root[data-theme='dark'] {
+  --bg: #080b12;
+  --bg-elevated: #0f1420;
+  --panel: #121a29;
+  --panel-hover: #182236;
+  --border: #1f2b40;
+  --border-strong: #2c3c58;
+  --text: #e6edf7;
+  --text-muted: #8798b3;
+  --text-faint: #5b6b85;
+  --accent: #38bdf8;
+  --accent-soft: #0e3a52;
+  --ok: #34d399;
+  --ok-soft: #0d3a2c;
+  --warn: #fbbf24;
+  --warn-soft: #3d2f08;
+  --danger: #f87171;
+  --danger-soft: #431a1a;
+  --violet: #a78bfa;
+  --grid: #1a2436;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f6fb;
+  --bg-elevated: #ffffff;
+  --panel: #ffffff;
+  --panel-hover: #eef2f9;
+  --border: #dfe5ef;
+  --border-strong: #c3cddd;
+  --text: #0f1a2b;
+  --text-muted: #5a6a83;
+  --text-faint: #8494ac;
+  --accent: #0284c7;
+  --accent-soft: #dbeefb;
+  --ok: #059669;
+  --ok-soft: #d6f5e8;
+  --warn: #b45309;
+  --warn-soft: #fdf0d5;
+  --danger: #dc2626;
+  --danger-soft: #fbe0e0;
+  --violet: #7c3aed;
+  --grid: #e4e9f2;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-panel: var(--panel);
+  --color-panel-hover: var(--panel-hover);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-violet: var(--violet);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    'Segoe UI', 'Segoe UI Variable', system-ui, -apple-system, 'Noto Sans Arabic', 'Tahoma', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/*
+  Numeric and technical values are always laid out left-to-right, even in the
+  Arabic RTL interface. Without this, bidi reordering turns "0 B" into "B 0"
+  and mangles IP addresses, MACs and ports.
+*/
+.tnum,
+.mono {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+}
+
+.tnum {
+  font-feature-settings: 'tnum';
+}
+
+.mono {
+  font-family: 'Cascadia Mono', 'Consolas', ui-monospace, monospace;
+}
+
+/* Isolated values still need to sit on the correct side of their cell. */
+:root[dir='rtl'] .tnum,
+:root[dir='rtl'] .mono {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 6px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* Recharts injects inline SVG; keep its focus outlines from flashing. */
+.recharts-wrapper :focus {
+  outline: none;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.live-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
