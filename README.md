@@ -1,11 +1,60 @@
-# blazma.nt
+<h1 align="center">blazma.nt</h1>
 
-Professional network monitoring and traffic analysis for Windows.
+<p align="center">
+  <strong>Professional network monitoring &amp; traffic analysis for Windows</strong><br>
+  Passive, read-only, privacy-first — with active control of a router you own.
+</p>
+
+<p align="center">
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows">
+  <img alt="Electron" src="https://img.shields.io/badge/Electron-43-47848F?logo=electron&logoColor=white">
+  <img alt="React" src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white">
+  <img alt="Tests" src="https://img.shields.io/badge/tests-88%20passing-3FB950">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-blue">
+</p>
+
+<p align="center">
+  <img alt="blazma.nt dashboard" src="docs/screenshots/dashboard.png" width="90%">
+</p>
 
 blazma.nt watches a network you own — or are authorised to monitor — and shows
 you what is actually on the wire: which devices are connected, what they talk
 to, which protocols they use, and which of that traffic is travelling
-unencrypted. It is strictly **passive and read-only**.
+unencrypted. It is strictly **passive and read-only** for monitoring, and adds
+**active control of your own router** through the router's official API — no
+spoofing, no packet injection, no network disruption.
+
+Fully bilingual: **Arabic (RTL)** and **English**, with a modern dark/light theme.
+
+---
+
+## Features
+
+| | |
+| --- | --- |
+| 📊 **Dashboard** | Live traffic graph, top talkers, top protocols, device & connection counts |
+| 🖥️ **Device discovery** | Every device on the LAN — IP, MAC, vendor (offline OUI), first/last seen, up/down |
+| ⇄ **Live traffic** | Real-time flow table with protocol, direction, encryption, size — never freezes the UI |
+| ⋈ **Connections** | Searchable, filterable flow history with TCP state and per-flow byte counts |
+| ◈ **Protocol analysis** | Header-based identification (not port guessing) for DNS, HTTP, TLS, DHCP, QUIC, SSH… |
+| 🔒 **HTTPS / TLS** | SNI, version and certificate names read only from what TLS sends in the clear — never decrypted |
+| ⚠️ **Unencrypted traffic** | Flags cleartext protocols; shows non-sensitive metadata with credentials redacted by allowlist |
+| ⌖ **DNS monitor** | Query/response log with a one-click privacy purge |
+| ◉ **Alerts** | New device, unencrypted protocol, traffic spike, port-scan pattern… each with a stated reason, never a verdict |
+| ◱ **Analytics** | Bandwidth, peaks, ratios and reports over 1h / 24h / 7d / 30d, exportable to CSV / JSON / PDF |
+| ⌂ **Router control** | Block/unblock any device, change DNS, reboot — via your router's own API |
+| ⏺ **Packet capture** | Explicit, opt-in PCAP recording with duration/size caps — nothing is recorded automatically |
+
+<p align="center">
+  <img alt="Router control" src="docs/screenshots/router-control.png" width="90%"><br>
+  <em>Router Control — commands sent to your own router, no spoofing or injection.</em>
+</p>
+
+<p align="center">
+  <img alt="Capture environment" src="docs/screenshots/settings.png" width="90%"><br>
+  <em>Automatic capture-backend detection: Npcap/dumpcap when present, built-in pktmon otherwise.</em>
+</p>
 
 ---
 
