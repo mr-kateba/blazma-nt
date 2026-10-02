@@ -1,7 +1,7 @@
 {
   "name": "blazma-nt",
   "productName": "blazma.nt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Professional network monitoring and traffic analysis for Windows. Passive, read-only, privacy-first.",
   "author": "blazma.nt",
   "license": "MIT",
