@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="branding/logo.svg" width="128" alt="blazma.nt logo">
+  <img src="branding/logo.svg" width="128" alt="شعار blazma.nt">
 </p>
 
 <h1 align="center">blazma.nt</h1>
 
 <p align="center">
-  <strong>Professional network monitoring &amp; traffic analysis for Windows</strong><br>
-  Passive, read-only, privacy-first — with active control of a router you own.
+  مراقبة الشبكة وتحليل حركة البيانات على ويندوز، بواجهة عربية<br>
+  Network monitoring &amp; traffic analysis for Windows
 </p>
 
 <p align="center">
@@ -20,8 +20,146 @@
 </p>
 
 <p align="center">
-  <img alt="blazma.nt dashboard" src="docs/screenshots/dashboard.png" width="90%">
+  <a href="#العربية">العربية</a> · <a href="#english">English</a>
 </p>
+
+---
+
+<div dir="rtl">
+
+## العربية
+
+**blazma.nt** يراقب شبكتك (أو أي شبكة عندك تصريح تراقبها) ويوريك وش يصير فيها فعلًا: مين الأجهزة المتصلة، ووين تتصل، ووش البروتوكولات اللي تستخدمها، وأي جزء من الحركة يمشي **بدون تشفير**. المراقبة **سلبية وللقراءة فقط**، والبرنامج يقدر كمان **يتحكم بالراوتر حقك** عن طريق واجهة الراوتر الرسمية، بدون أي تلاعب أو حقن أو قطع للشبكة.
+
+الواجهة **عربية من اليمين لليسار** افتراضيًا، وتقدر تحوّلها للإنجليزي من الإعدادات. فيه وضع داكن ووضع فاتح.
+
+<p align="center">
+  <img alt="لوحة المعلومات" src="docs/screenshots/dashboard.png" width="90%">
+</p>
+
+### ⬇️ التحميل
+
+حمّل آخر نسخة من [صفحة الإصدارات](https://github.com/mr-kateba/blazma-nt/releases/latest) وشغّل `blazma.nt-Setup-<الإصدار>.exe`.
+
+> ويندوز ممكن يطلع لك تحذير SmartScreen لأن المثبّت غير موقّع رقميًا. اضغط «More info» ثم «Run anyway».
+
+### ✨ المميزات
+
+| | |
+| --- | --- |
+| 📊 **لوحة المعلومات** | رسم مباشر للحركة، وأكثر الأجهزة استهلاكًا، وأكثر البروتوكولات، وعدد الأجهزة والاتصالات |
+| 🖥️ **اكتشاف الأجهزة** | كل جهاز على الشبكة: IP وMAC والشركة المصنّعة (بدون نت)، وأول وآخر ظهور، والرفع والتنزيل |
+| ⇄ **الحركة المباشرة** | جدول لحظي للاتصالات فيه البروتوكول والاتجاه والتشفير والحجم، والواجهة ما تعلّق |
+| ⋈ **الاتصالات** | سجل اتصالات تقدر تبحث فيه وتفلتره، مع حالة TCP وحجم كل اتصال |
+| ◈ **تحليل البروتوكولات** | يتعرّف على البروتوكول من محتوى الحزمة نفسها مو من رقم المنفذ: DNS وHTTP وTLS وDHCP وQUIC وSSH وغيرها |
+| 🔒 **HTTPS / TLS** | اسم الموقع والإصدار وأسماء الشهادة، من الأشياء اللي TLS يرسلها مكشوفة بس، وبدون فك تشفير أبدًا |
+| ⚠️ **الحركة غير المشفّرة** | ينبّهك على البروتوكولات المكشوفة ويعرض بيانات وصفية غير حساسة، وأي كلمة سر أو كوكيز تنحذف تلقائيًا |
+| ⌖ **مراقبة DNS** | سجل الاستعلامات والردود، مع زر يمسحها كلها لخصوصيتك |
+| ◉ **التنبيهات** | جهاز جديد، بروتوكول غير مشفّر، ارتفاع مفاجئ في الحركة، نمط فحص منافذ... وكل تنبيه يقول لك السبب، بدون ما يتهم أحد |
+| ◱ **التحليلات** | سرعة النت والذروة والنسب وتقارير لآخر ساعة / يوم / أسبوع / شهر، وتصدير CSV / JSON / PDF |
+| ⌂ **التحكم بالراوتر** | احظر أي جهاز أو فك حظره، وغيّر DNS، وأعد تشغيل الراوتر، عن طريق واجهة الراوتر الرسمية |
+| ⏺ **التقاط الحزم** | تسجيل PCAP بس لما تطلبه أنت، وبحد للمدة والحجم. ما يتسجّل شي تلقائيًا |
+
+<p align="center">
+  <img alt="التحكم بالراوتر" src="docs/screenshots/router-control.png" width="90%"><br>
+  <em>التحكم بالراوتر: أوامر ترسل مباشرة لراوترك، بدون انتحال ولا حقن.</em>
+</p>
+
+<p align="center">
+  <img alt="الإعدادات" src="docs/screenshots/settings.png" width="90%"><br>
+  <em>البرنامج يكتشف طريقة الالتقاط لحاله: Npcap مع dumpcap إذا موجودين، وإلا pktmon المدمج في ويندوز.</em>
+</p>
+
+> الصور مأخوذة من واجهة البرنامج ببيانات تجريبية.
+
+### 🚫 وش ما يسويه البرنامج
+
+هذي قيود مقصودة في التصميم، مو ميزات ناقصة:
+
+- **ما يفك التشفير.** حركة HTTPS/TLS ما تنفك ولا تنعترض أبدًا. يعرض بس اللي TLS يرسله مكشوف (اسم الموقع، والإصدار، وأسماء الشهادة إذا ظهرت).
+- **ما يجمع كلمات سر.** كلمات السر والكوكيز ومعرّفات الجلسات وترويسات التفويض ومفاتيح API ما تنجمع أبدًا. محلّل HTTP يحتفظ بس بالترويسات اللي في قائمة مسموحة، والباقي ينحذف قبل ما يتسجّل.
+- **ما فيه ARP spoofing ولا MITM ولا تحويل DNS.** البرنامج ما يرسل شي على الشبكة أصلًا، فما يقدر يقطعها أو يحوّل حركتها.
+- **ما فيه تتبع ولا سحابة.** ولا شي يطلع من جهازك. حتى معرفة الشركة المصنّعة من عنوان MAC تصير من جدول داخل البرنامج، عشان عناوين أجهزتك ما تروح لأي طرف ثاني.
+
+**راقب بس الشبكات اللي تملكها أو عندك إذن تراقبها.**
+
+### 🧰 المتطلبات
+
+| المتطلب | ملاحظات |
+| --- | --- |
+| ويندوز 10 (1809 أو أحدث) أو ويندوز 11 | 64 بت |
+| [Npcap](https://npcap.com/#download) | لالتقاط الحزم مباشرة (اختياري، شوف تحت) |
+| [Wireshark](https://www.wireshark.org/download.html) | يوفّر `dumpcap.exe` اللي يلتقط الحزم |
+| Node.js 20 أو أحدث | للتطوير بس |
+
+#### تثبيت Npcap
+
+1. حمّل المثبّت من <https://npcap.com/#download>.
+2. شغّله كمسؤول (Administrator).
+3. فعّل خيار **«Install Npcap in WinPcap API-compatible Mode»**.
+4. خلّ خيار **«Restrict Npcap driver's access to Administrators only»** بدون تفعيل، إذا تبغى تلتقط بدون ما تشغّل البرنامج كمسؤول.
+5. أعد تشغيل blazma.nt. تقدر تشوف الحالة من الإعدادات ← الالتقاط.
+
+#### طرق الالتقاط
+
+البرنامج يختار أفضل طريقة متوفرة لحاله:
+
+1. **Npcap مع dumpcap (الأفضل).** بث مباشر بأقل تأخير. `dumpcap` أداة الالتقاط اللي تجي مع Wireshark، وكل التحليل يصير داخل blazma.nt.
+2. **pktmon (البديل المدمج).** موجود في ويندوز أصلًا، فما تحتاج تثبّت شي. بس لازم تشغّل البرنامج **كمسؤول**، والحركة توصل على دفعات كل كم ثانية بدل ما تكون لحظية. تقدر تجرّبه بـ `node scripts/test-pktmon.mjs` (كمسؤول).
+
+> **ليش Npcap مو مضمّن مع البرنامج؟** رخصة Npcap تمنع توزيعه داخل برامج ثانية بدون رخصة تجارية، ومثبّته المجاني ما يشتغل بصمت. عشان كذا البرنامج يشتغل مباشرة عن طريق pktmon، ويستخدم Npcap تلقائيًا إذا ثبّته بنفسك.
+
+إذا ما فيه أي طريقة التقاط متوفرة، البرنامج يشتغل عادي ويقول لك بالضبط وش الناقص وليش، بدل ما يعرض شاشات فاضية.
+
+### 🔐 الخصوصية والأمان
+
+- **وضع الخصوصية** (الإعدادات ← الخصوصية): يوقف تسجيل أي شي مأخوذ من محتوى الحزم، يعني استعلامات DNS وبيانات HTTP وأسماء مواقع TLS، والأجهزة والاتصالات والعدّادات تظل تشتغل. وتقدر تمسح سجل DNS أي وقت، وتوقف تخزين DNS أو البيانات غير المشفّرة كل واحد لحاله.
+- **الحزم الخام ما تتخزّن.** قاعدة البيانات فيها بيانات وصفية وإحصائيات بس. الحزم توصل للقرص فقط إذا بدأت التقاط PCAP بنفسك.
+- **مدة الاحتفاظ** بالبيانات تختارها أنت (يوم / أسبوع / شهر / 3 شهور / بدون حد)، وتقدر تمسح أي نوع بيانات يدويًا من الإعدادات.
+- **الواجهة معزولة** عن النظام (`contextIsolation`) ومالها وصول للنت، وتتكلم مع البرنامج من قنوات محددة بس.
+- **ما فيه أوامر shell.** البرامج الخارجية تشتغل بدون `cmd.exe`، وكل المدخلات (الواجهة، فلتر الالتقاط، مسار الحفظ) تتفحص قبل الاستخدام.
+- **صلاحيات أقل.** البرنامج ما يطلب صلاحيات مسؤول إلا إذا احتاجها الالتقاط.
+
+### 🛠️ حل المشاكل
+
+**«Npcap مطلوب لمراقبة حركة الشبكة»**
+Npcap مو مثبّت، أو مثبّت بدون وضع WinPcap API-compatible. ثبّته من جديد من npcap.com مع تفعيل الخيار، وأعد تشغيل البرنامج.
+
+**«لم يُعثر على dumpcap.exe»**
+ثبّت Wireshark. البرنامج يدوّر عليه في `C:\Program Files\Wireshark` و`C:\Program Files (x86)\Wireshark` و`%LOCALAPPDATA%\Programs\Wireshark`.
+
+**كرت الشبكة مكتوب جنبه «no capture device»**
+الكرت ماله مقبض التقاط من Npcap، غالبًا لأن Npcap مو مثبّت أو لأن الكرت افتراضي. الكروت اللي ينفع الالتقاط منها تطلع أول القائمة ومكتوب عليها *capturable*.
+
+**الالتقاط يبدأ ويوقف على طول**
+غالبًا Npcap مثبّت مع خيار «restrict to Administrators». يا تثبّته من جديد بدون الخيار، يا تشغّل البرنامج كمسؤول.
+
+**أجهزة مكتوب عليها «Randomized MAC»**
+الجوالات الحديثة تغيّر عنوان MAC لكل شبكة، فما ينفع نعرف الشركة المصنّعة منه، والبرنامج يقول لك هذا بدل ما يخمّن.
+
+**حزم تضيع** (يطلع العدد فوق)
+خفّف معدّل تحديث الواجهة من الإعدادات ← الأداء، أو حط فلتر التقاط يقلّل الحركة.
+
+### 👨‍💻 للمطوّرين
+
+```bash
+npm install
+npm run dev      # تشغيل للتطوير
+npm test         # الاختبارات
+npm run dist     # بناء المثبّت release/blazma.nt-Setup-<الإصدار>.exe
+```
+
+الاختبارات تبني حزمها من ملفات تجريبية في `tests/fixtures.ts`، وما تلمس أي شبكة حقيقية. شرح البنية وهيكل المشروع بالتفصيل في القسم الإنجليزي تحت.
+
+### 📄 الرخصة
+
+MIT. خط IBM Plex Sans Arabic المضمّن برخصة SIL Open Font License 1.1 ([src/renderer/src/fonts/OFL.txt](src/renderer/src/fonts/OFL.txt)).
+
+</div>
+
+---
+
+## English
 
 blazma.nt watches a network you own — or are authorised to monitor — and shows
 you what is actually on the wire: which devices are connected, what they talk
@@ -30,11 +168,11 @@ unencrypted. It is strictly **passive and read-only** for monitoring, and adds
 **active control of your own router** through the router's official API — no
 spoofing, no packet injection, no network disruption.
 
-Fully bilingual: **Arabic (RTL)** and **English**, with a modern dark/light theme.
+Arabic (RTL) is the default interface language; English can be chosen in Settings. Dark and light themes.
 
 ---
 
-## Features
+### Features
 
 | | |
 | --- | --- |
@@ -52,23 +190,13 @@ Fully bilingual: **Arabic (RTL)** and **English**, with a modern dark/light them
 | ⏺ **Packet capture** | Explicit, opt-in PCAP recording with duration/size caps — nothing is recorded automatically |
 
 <p align="center">
-  <img alt="Router control" src="docs/screenshots/router-control.png" width="90%"><br>
-  <em>Router Control — commands sent to your own router, no spoofing or injection.</em>
-</p>
-
-<p align="center">
-  <img alt="Capture environment" src="docs/screenshots/settings.png" width="90%"><br>
-  <em>Automatic capture-backend detection: Npcap/dumpcap when present, built-in pktmon otherwise.</em>
-</p>
-
-<p align="center">
-  <img alt="Light theme" src="docs/screenshots/dashboard-light.png" width="90%"><br>
-  <em>The light theme, in English.</em>
+  <img alt="blazma.nt in English, light theme" src="docs/screenshots/dashboard-light.png" width="90%"><br>
+  <em>The English interface in the light theme. Router Control and Settings are shown in the Arabic section above.</em>
 </p>
 
 ---
 
-## What it will not do
+### What it will not do
 
 These are design constraints, not missing features:
 
@@ -89,7 +217,7 @@ These are design constraints, not missing features:
 
 ---
 
-## Requirements
+### Requirements
 
 | Requirement | Notes |
 | --- | --- |
@@ -98,7 +226,7 @@ These are design constraints, not missing features:
 | [Wireshark](https://www.wireshark.org/download.html) | Provides `dumpcap.exe`, the capture helper |
 | Node.js 20+ | Development only |
 
-### Installing Npcap
+#### Installing Npcap
 
 1. Download the installer from <https://npcap.com/#download>.
 2. Run it as Administrator.
@@ -107,7 +235,7 @@ These are design constraints, not missing features:
    if you want to capture without running blazma.nt elevated.
 5. Restart blazma.nt. Settings → Capture shows the detected state.
 
-### Capture backends
+#### Capture backends
 
 blazma.nt picks the best available capture path automatically:
 
@@ -133,7 +261,7 @@ missing and why; it does not silently show empty screens.
 
 ---
 
-## Running
+### Running
 
 ```bash
 npm install
@@ -164,7 +292,7 @@ touches a real network and contains no captured traffic.
 
 ---
 
-## Architecture
+### Architecture
 
 ```
 Npcap driver
@@ -199,7 +327,7 @@ folds packets into in-memory tables, flushes aggregates to SQLite once per
 second, and pushes batched summaries to the renderer a couple of times per
 second. Packet rate therefore affects backend CPU, not UI responsiveness.
 
-### Project layout
+#### Project layout
 
 ```
 src/
@@ -222,7 +350,7 @@ tests/         Vitest suites over fixtures
 build/         Installer customisation
 ```
 
-### Storage
+#### Storage
 
 SQLite via Node's built-in `node:sqlite` (Electron 43 ships Node 24), with
 `node-sqlite3-wasm` as an automatic fallback. Either way there is no native
@@ -239,7 +367,7 @@ Settings.
 
 ---
 
-## Security
+### Security
 
 - **Renderer sandboxing.** `contextIsolation: true`, `nodeIntegration: false`.
   The renderer is a plain web page with a strict CSP and no network access.
@@ -259,7 +387,7 @@ Settings.
 - **Least privilege.** The app requests `asInvoker`. Elevation is only needed
   for capture if Npcap was installed with the Administrators-only restriction.
 
-## Privacy
+### Privacy
 
 **Privacy Mode** (Settings → Privacy) stops recording anything derived from
 packet payloads — DNS queries, HTTP metadata and TLS server names — while
@@ -269,7 +397,7 @@ independently.
 
 ---
 
-## Troubleshooting
+### Troubleshooting
 
 **"Npcap is required to monitor network traffic."**
 Npcap is not installed, or was installed without WinPcap API-compatible mode.
@@ -299,7 +427,7 @@ reduce the volume reaching the parser.
 
 ---
 
-## Licence
+### Licence
 
 MIT. The bundled IBM Plex Sans Arabic font is under the SIL Open Font License 1.1
 ([src/renderer/src/fonts/OFL.txt](src/renderer/src/fonts/OFL.txt)).
