@@ -1,11 +1,14 @@
 name: Release
 
 # Push a tag such as v1.0.1 (matching the version in package.json) to build the
-# Windows installer and publish it as a GitHub release.
+# Windows installer and publish it as a GitHub release. It can also be run by
+# hand from the Actions tab, which tags the current commit with the
+# package.json version.
 on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,14 +24,16 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Check tag matches package.json version
+      - name: Resolve release tag
+        id: tag
         shell: bash
         run: |
-          version="$(node -p "require('./package.json').version")"
-          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
-            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $version"
+          tag="v$(node -p "require('./package.json').version")"
+          if [ "$GITHUB_REF_TYPE" = tag ] && [ "$tag" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $tag"
             exit 1
           fi
+          echo "name=$tag" >> "$GITHUB_OUTPUT"
 
       - run: npm ci
 
@@ -40,5 +45,7 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          target_commitish: ${{ github.sha }}
           files: release/*.exe
           generate_release_notes: true
