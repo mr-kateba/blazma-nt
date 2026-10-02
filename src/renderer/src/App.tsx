@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Layout, type PageId } from './components/Layout'
+import logo from './logo.svg'
 import { AlertsPage } from './pages/Alerts'
 import { AnalyticsPage } from './pages/Analytics'
 import { ConnectionsPage } from './pages/Connections'
@@ -23,9 +24,7 @@ export function App(): React.JSX.Element {
     return (
       <div className="grid h-full w-full place-items-center bg-bg text-muted">
         <div className="flex flex-col items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent text-lg font-bold text-[#04121c]">
-            b
-          </div>
+          <img src={logo} alt="" className="h-10 w-10" />
           <span className="text-sm">blazma.nt</span>
         </div>
       </div>

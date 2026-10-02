@@ -111,7 +111,7 @@ export function Button({
 }): React.JSX.Element {
   const styles: Record<string, string> = {
     default: 'border-line bg-panel-hover text-ink hover:border-line-strong',
-    primary: 'border-transparent bg-accent text-[#04121c] hover:brightness-110 font-semibold',
+    primary: 'border-transparent bg-accent text-on-accent hover:brightness-110 font-semibold',
     danger: 'border-transparent bg-danger text-white hover:brightness-110 font-semibold',
     ghost: 'border-transparent bg-transparent text-muted hover:text-ink hover:bg-panel-hover'
   }

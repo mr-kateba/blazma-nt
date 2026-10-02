@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="branding/logo.svg" width="128" alt="blazma.nt logo">
+</p>
+
 <h1 align="center">blazma.nt</h1>
 
 <p align="center">
@@ -6,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/mr-kateba/blazma-nt/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/mr-kateba/blazma-nt?color=FF6D00"></a>
   <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows">
   <img alt="Electron" src="https://img.shields.io/badge/Electron-43-47848F?logo=electron&logoColor=white">
   <img alt="React" src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white">
@@ -54,6 +59,11 @@ Fully bilingual: **Arabic (RTL)** and **English**, with a modern dark/light them
 <p align="center">
   <img alt="Capture environment" src="docs/screenshots/settings.png" width="90%"><br>
   <em>Automatic capture-backend detection: Npcap/dumpcap when present, built-in pktmon otherwise.</em>
+</p>
+
+<p align="center">
+  <img alt="Light theme" src="docs/screenshots/dashboard-light.png" width="90%"><br>
+  <em>The light theme, in English.</em>
 </p>
 
 ---
@@ -291,4 +301,5 @@ reduce the volume reaching the parser.
 
 ## Licence
 
-MIT.
+MIT. The bundled IBM Plex Sans Arabic font is under the SIL Open Font License 1.1
+([src/renderer/src/fonts/OFL.txt](src/renderer/src/fonts/OFL.txt)).

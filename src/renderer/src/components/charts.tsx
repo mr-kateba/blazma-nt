@@ -20,7 +20,7 @@ import { formatBytes, formatTime } from '../format'
 import { EmptyState } from './ui'
 
 /** Chart palette shared by every visualisation, tuned for both themes. */
-export const SERIES_COLORS = ['#38bdf8', '#34d399', '#a78bfa', '#fbbf24', '#f87171', '#22d3ee', '#f472b6', '#94a3b8']
+export const SERIES_COLORS = ['#ff6d00', '#34d399', '#ffb300', '#a78bfa', '#ff5252', '#22d3ee', '#f472b6', '#94a3b8']
 
 const axisStyle = { fontSize: 11, fill: 'var(--text-faint)' }
 const gridStroke = 'var(--grid)'
@@ -68,8 +68,8 @@ export function TrafficAreaChart({
       <AreaChart data={data} margin={{ top: 4, right: 8, bottom: 0, left: 8 }}>
         <defs>
           <linearGradient id="gradDown" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#38bdf8" stopOpacity={0.45} />
-            <stop offset="100%" stopColor="#38bdf8" stopOpacity={0.02} />
+            <stop offset="0%" stopColor="#ff6d00" stopOpacity={0.45} />
+            <stop offset="100%" stopColor="#ff6d00" stopOpacity={0.02} />
           </linearGradient>
           <linearGradient id="gradUp" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#34d399" stopOpacity={0.4} />
@@ -85,7 +85,7 @@ export function TrafficAreaChart({
           type="monotone"
           dataKey="bytesDown"
           name="Download"
-          stroke="#38bdf8"
+          stroke="#ff6d00"
           strokeWidth={1.6}
           fill="url(#gradDown)"
           isAnimationActive={false}
@@ -125,7 +125,7 @@ export function PacketsLineChart({
           type="monotone"
           dataKey="packets"
           name="Packets"
-          stroke="#a78bfa"
+          stroke="#ffb300"
           strokeWidth={1.6}
           dot={false}
           isAnimationActive={false}

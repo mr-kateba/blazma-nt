@@ -1,53 +1,87 @@
 @import 'tailwindcss';
 
+/* IBM Plex Sans Arabic, the Blazma family typeface (OFL-1.1, see fonts/OFL.txt). */
+@font-face {
+  font-family: 'Plex Arabic';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/plex-arabic-arabic-400.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'Plex Arabic';
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/plex-arabic-arabic-600.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'Plex Arabic';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/plex-arabic-latin-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Plex Arabic';
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/plex-arabic-latin-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
 /*
   Theme tokens. Both palettes are defined here and switched by the data-theme
   attribute on <html>, so every component can use semantic colours and never
-  needs a dark: variant.
+  needs a dark: variant. The colours are the Blazma family's (the same as
+  Blazma Get, Boost, Crosshair and AI): graphite surfaces, an #FF6D00 accent
+  and the #FFB300 -> #FF3D00 logo gradient.
 */
 :root,
 :root[data-theme='dark'] {
-  --bg: #080b12;
-  --bg-elevated: #0f1420;
-  --panel: #121a29;
-  --panel-hover: #182236;
-  --border: #1f2b40;
-  --border-strong: #2c3c58;
-  --text: #e6edf7;
-  --text-muted: #8798b3;
-  --text-faint: #5b6b85;
-  --accent: #38bdf8;
-  --accent-soft: #0e3a52;
+  --bg: #121216;
+  --bg-elevated: #16161b;
+  --panel: #1c1c22;
+  --panel-hover: #26262e;
+  --border: #2a2a33;
+  --border-strong: #3a3a45;
+  --text: #f2f2f5;
+  --text-muted: #a0a0ab;
+  --text-faint: #6e6e7a;
+  --accent: #ff6d00;
+  --accent-soft: rgba(255, 109, 0, 0.14);
+  --on-accent: #ffffff;
   --ok: #34d399;
-  --ok-soft: #0d3a2c;
-  --warn: #fbbf24;
-  --warn-soft: #3d2f08;
-  --danger: #f87171;
-  --danger-soft: #431a1a;
+  --ok-soft: #10302a;
+  --warn: #ffb300;
+  --warn-soft: #33270a;
+  --danger: #ff5252;
+  --danger-soft: #3a1a1c;
   --violet: #a78bfa;
-  --grid: #1a2436;
+  --grid: #24242c;
 }
 
 :root[data-theme='light'] {
-  --bg: #f4f6fb;
+  --bg: #f5f6f8;
   --bg-elevated: #ffffff;
   --panel: #ffffff;
-  --panel-hover: #eef2f9;
-  --border: #dfe5ef;
-  --border-strong: #c3cddd;
-  --text: #0f1a2b;
-  --text-muted: #5a6a83;
-  --text-faint: #8494ac;
-  --accent: #0284c7;
-  --accent-soft: #dbeefb;
-  --ok: #059669;
-  --ok-soft: #d6f5e8;
+  --panel-hover: #eef0f4;
+  --border: #dfe2e8;
+  --border-strong: #c5cad3;
+  --text: #1c1f26;
+  --text-muted: #5a6070;
+  --text-faint: #848a99;
+  --accent: #c2410c;
+  --accent-soft: rgba(255, 109, 0, 0.12);
+  --on-accent: #ffffff;
+  --ok: #15803d;
+  --ok-soft: #dcf3e4;
   --warn: #b45309;
-  --warn-soft: #fdf0d5;
-  --danger: #dc2626;
-  --danger-soft: #fbe0e0;
+  --warn-soft: #fff7e6;
+  --danger: #c53030;
+  --danger-soft: #fdecec;
   --violet: #7c3aed;
-  --grid: #e4e9f2;
+  --grid: #e8eaee;
 }
 
 @theme inline {
@@ -62,6 +96,7 @@
   --color-faint: var(--text-faint);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
   --color-ok: var(--ok);
   --color-ok-soft: var(--ok-soft);
   --color-warn: var(--warn);
@@ -85,8 +120,7 @@ body,
 body {
   background: var(--bg);
   color: var(--text);
-  font-family:
-    'Segoe UI', 'Segoe UI Variable', system-ui, -apple-system, 'Noto Sans Arabic', 'Tahoma', sans-serif;
+  font-family: 'Plex Arabic', 'Segoe UI', system-ui, 'Tahoma', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
@@ -132,6 +166,15 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-faint);
+}
+
+/*
+  Charts are laid out left-to-right in both languages. Inheriting RTL flips
+  the SVG text anchors (axis labels land on top of the bars) and reorders
+  "2 MB" into "MB 2".
+*/
+.recharts-responsive-container {
+  direction: ltr;
 }
 
 /* Recharts injects inline SVG; keep its focus outlines from flashing. */
