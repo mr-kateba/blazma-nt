@@ -28,7 +28,7 @@ function createWindow(): BrowserWindow {
     minHeight: 680,
     show: false,
     autoHideMenuBar: true,
-    backgroundColor: '#0b0f17',
+    backgroundColor: '#121216',
     title: 'blazma.nt',
     webPreferences: {
       preload: join(import.meta.dirname, '../preload/index.mjs'),
