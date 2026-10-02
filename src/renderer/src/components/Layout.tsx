@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
+import logo from '../logo.svg'
 import { useApp } from '../state'
 import type { TranslationKey } from '../i18n'
 import { formatBytes, formatRate } from '../format'
@@ -53,9 +54,7 @@ export function Layout({
     <div className="flex h-full w-full overflow-hidden bg-bg text-ink">
       <aside className="flex w-[212px] shrink-0 flex-col border-e border-line bg-bg-elevated">
         <div className="flex items-center gap-2.5 px-4 py-4">
-          <div className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-[15px] font-bold text-[#04121c]">
-            b
-          </div>
+          <img src={logo} alt="" className="h-8 w-8 shrink-0" />
           <div className="min-w-0">
             <div className="truncate text-[13px] font-semibold tracking-tight">blazma.nt</div>
             <div className="truncate text-[10px] text-faint">{t('app.tagline')}</div>
