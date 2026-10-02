@@ -19,7 +19,7 @@ win:
     - target: nsis
       arch:
         - x64
-  artifactName: NetWatchPro-Setup.exe
+  artifactName: ${productName}-Setup-${version}.exe
   # Capture works without elevation once Npcap is installed with the
   # "restrict to Administrators" option turned off, so the app does not demand
   # elevation it may not need.

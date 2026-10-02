@@ -137,7 +137,7 @@ npm run build
 npm start
 ```
 
-Windows installer (`release/NetWatchPro-Setup.exe`):
+Windows installer (`release/blazma.nt-Setup-<version>.exe`):
 
 ```bash
 npm run dist
